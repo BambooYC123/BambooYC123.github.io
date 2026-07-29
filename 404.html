@@ -1,0 +1,24 @@
+---
+layout: default
+title: Page not found
+permalink: /404.html
+sitemap: false
+---
+
+<script>
+  (function () {
+    var path = window.location.pathname;
+    var legacyPrefix = path.match(/^\/EricBlog(?=\/|$)/i);
+
+    if (legacyPrefix) {
+      var target = path.slice(legacyPrefix[0].length) || "/";
+      window.location.replace(target + window.location.search + window.location.hash);
+    }
+  }());
+</script>
+
+<h1>404</h1>
+
+<p>The requested page could not be found.</p>
+
+<p><a href="{{ '/' | relative_url }}">Return to the home page</a>.</p>

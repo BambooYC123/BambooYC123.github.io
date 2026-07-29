@@ -1,9 +1,9 @@
 title: Eric Chen
 email: yangcheneric123@gmail.com
 description: Personal projects and stuff
-url: "https://EricYC123.github.io" # the base hostname & protocol for your site
-# If this is a project site, set baseurl to "/repository-name".
-baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://ericyc123.github.io"
+baseurl: ""
+repository: EricYC123/EricYC123.github.io
 github_username:  EricYC123
 
 permalink: /:year/:month/:day/:title/
