@@ -1,10 +1,10 @@
 title: Eric Chen
 email: yangcheneric123@gmail.com
 description: Personal projects and stuff
-url: "https://ericyc123.github.io"
+url: "https://bambooyc123.github.io"
 baseurl: ""
-repository: EricYC123/EricYC123.github.io
-github_username:  EricYC123
+repository: BambooYC123/BambooYC123.github.io
+github_username: BambooYC123
 
 permalink: /:year/:month/:day/:title/
 timezone: Australia/Sydney
