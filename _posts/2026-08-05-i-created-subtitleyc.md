@@ -6,13 +6,28 @@ description: I built a Windows app that turns burned-in video captions into edit
 categories: projects ocr subtitles windows
 ---
 
+**Table of contents**
+
+- [I Created SubtitleYC](#i-created-subtitleyc)
+- [Why make a new interface for OCR?](#why-make-a-new-interface-for-ocr)
+- [The Overall Design](#the-overall-design)
+- [Getting a video into the app](#getting-a-video-into-the-app)
+- [Selecting what matters](#selecting-what-matters)
+- [Turning OCR results into subtitle cues](#turning-ocr-results-into-subtitle-cues)
+- [The Subtitle Editor](#the-subtitle-editor)
+- [Packaging](#packaging)
+- [What I learned](#what-i-learned)
+
+## I Created SubtitleYC
 Some videos have captions permanently drawn or burned into the video and sometimes, people want to transcribe those captions to translate them or extract the hardsubs to share with others.
 
 But for videos with hardsubs, there usually isn't a proper subtitle track to extract. You could manually transcribe the subtitles and time each line to match exactly when it appears in the video. However, that process simply isn't sustainable, so we need a more efficient solution.
 
 The obvious answer is OCR, but applying OCR to a video is not quite the same as applying it to a screenshot. A useful subtitle file needs the right text *and* the right timing. Subtitling is somewhat niche despite being used everywhere, and tools that combine hardsub OCR, frame review, editing, and export in one workflow aren't exactly a dime a dozen.
 
-> With that in mind, my struggle with hardsubs led me to create [SubtitleYC](https://github.com/BambooYC123/SubtitleYC), a local Windows app that turns burned-in captions into editable `.srt`, `.txt`, or `.ass` files for everyone to use.
+<div style="border: 1px solid #e8e8e8; border-radius: 4px; padding: 1rem; margin: 1.5rem 0;" markdown="1">
+With that in mind, my struggle with hardsubs led me to create [SubtitleYC](https://github.com/BambooYC123/SubtitleYC), a local Windows app that turns burned-in captions into editable `.srt`, `.txt`, or `.ass` files for everyone to use.
+</div>
 
 This is the kind of large and meaningful project that I wanted to include in my blog.
 
