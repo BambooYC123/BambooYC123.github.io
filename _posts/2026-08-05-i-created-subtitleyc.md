@@ -25,9 +25,9 @@ But for videos with hardsubs, there usually isn't a proper subtitle track to ext
 
 The obvious answer is OCR, but applying OCR to a video is not quite the same as applying it to a screenshot. A useful subtitle file needs the right text *and* the right timing. Subtitling is somewhat niche despite being used everywhere, and tools that combine hardsub OCR, frame review, editing, and export in one workflow aren't exactly a dime a dozen.
 
-<div style="border: 1px solid #a8ceff; border-radius: 4px; padding: 1rem; margin: 1.5rem 0;" markdown="1">
+```text
 With that in mind, my struggle with hardsubs led me to create [SubtitleYC](https://github.com/BambooYC123/SubtitleYC), a local Windows app that turns burned-in captions into editable `.srt`, `.txt`, or `.ass` files for everyone to use.
-</div>
+```
 
 This is the kind of large and meaningful project that I wanted to include in my blog.
 
