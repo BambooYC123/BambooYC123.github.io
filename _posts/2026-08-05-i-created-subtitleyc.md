@@ -6,15 +6,15 @@ description: I built a Windows app that turns burned-in video captions into edit
 categories: projects ocr subtitles windows
 ---
 
-Some videos have captions permanently drawn or burned into the image. Sometimes, people want to transcribe those captions to translate them or extract the hardsubs to share with others.
+Some videos have captions permanently drawn or burned into the video and sometimes, people want to transcribe those captions to translate them or extract the hardsubs to share with others.
 
 But for videos with hardsubs, there usually isn't a proper subtitle track to extract. You could manually transcribe the subtitles and time each line to match exactly when it appears in the video. However, that process simply isn't sustainable, so we need a more efficient solution.
 
 The obvious answer is OCR, but applying OCR to a video is not quite the same as applying it to a screenshot. A useful subtitle file needs the right text *and* the right timing. Subtitling is somewhat niche despite being used everywhere, and tools that combine hardsub OCR, frame review, editing, and export in one workflow aren't exactly a dime a dozen.
 
-With that in mind, my struggle with hardsubs led me to create [SubtitleYC](https://github.com/BambooYC123/SubtitleYC), a local Windows app that turns burned-in captions into editable `.srt`, `.txt`, or `.ass` files for everyone to use.
+> With that in mind, my struggle with hardsubs led me to create [SubtitleYC](https://github.com/BambooYC123/SubtitleYC), a local Windows app that turns burned-in captions into editable `.srt`, `.txt`, or `.ass` files for everyone to use.
 
-These are also the kinds of large and meaningful projects that I wanted to include in my blog.
+This is the kind of large and meaningful project that I wanted to include in my blog.
 
 ## Why make a new interface for OCR?
 
@@ -22,7 +22,7 @@ These are also the kinds of large and meaningful projects that I wanted to inclu
 
 A command-line OCR run is only one part of the actual workflow. Before that, I need to obtain the video, inspect it, find the caption region, and choose the right recognition settings. Afterwards, I need to watch the video again, find OCR mistakes, adjust timings, and then export the result. Doing each small step in a separate program felt like a pipeline I had to reconstruct every time. As someone who once specialised in CI/CD pipelines, I needed a solution.
 
-So the main idea behind SubtitleYC was to put the whole workflow in one place:
+**So the main idea behind SubtitleYC was to put the whole workflow in one place:**
 
 1. Open or download a video with yt-dlp.
 2. Draw a crop around the burned-in captions.
@@ -48,7 +48,7 @@ SubtitleYC is both a desktop shell and a small web application.
 
 The two halves communicate through a private server bound to `127.0.0.1`. A random port and a private token are created for each desktop session. This sounds slightly roundabout for a local application, but the split has been useful: the backend is good at process and file management, while the frontend is good at building a fairly dense editing interface.
 
-At a high level, the data flow is:
+**At a high level, the data flow is:**
 
 ```text
 Video URL or local file
