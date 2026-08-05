@@ -17,8 +17,9 @@ categories: projects ocr subtitles windows
 - [The Subtitle Editor](#the-subtitle-editor)
 - [Packaging](#packaging)
 - [What I learned](#what-i-learned)
+- [Final Remarks](#final-remarks)
 
-## I Created SubtitleYC
+## I Created [SubtitleYC](https://github.com/BambooYC123/SubtitleYC)
 Some videos have captions permanently drawn or burned into the video and sometimes, people want to transcribe those captions to translate them or extract the hardsubs to share with others.
 
 But for videos with hardsubs, there usually isn't a proper subtitle track to extract. You could manually transcribe the subtitles and time each line to match exactly when it appears in the video. However, that process simply isn't sustainable, so we need a more efficient solution.
@@ -89,7 +90,7 @@ Video URL or local file
 
 ## Getting a video into the app
 
-There are two input paths. A local video can be selected directly, while a URL is passed to `yt-dlp`. For URLs, SubtitleYC first checks the available formats and can either choose automatically or let me select a particular video and audio combination. It also supports importing a site's own subtitle tracks when they are available—this is a subtitling app, so it wouldn't be right to leave out the ability to download a video's existing subtitle transcripts.
+There are two input paths. A local video can be selected directly, while a URL is passed to `yt-dlp`. For URLs, SubtitleYC first checks the available formats and can either choose automatically or let me select a particular video and audio combination. It also supports importing a site's own subtitle tracks when they are available. This is a subtitling app, so it wouldn't be right to leave out the ability to download a video's existing subtitle transcripts.
 
 After the file is available, `ffprobe` reads its duration, dimensions, frame rate, and stream information. This metadata matters later. A timestamp that looks correct to the nearest millisecond may still fall between actual frames, so the editor can snap subtitle boundaries back to the video's frame grid.
 
@@ -165,14 +166,18 @@ None of this changes the OCR algorithm, but it does make life easier for anyone 
 
 ## What I learned
 
-The main lesson was that even combining existing tools is difficult. VideOCR already solved the central recognition problem. Most of the work in SubtitleYC came from the less interesting parts: handling failed downloads, keeping the interface responsive during long jobs, preserving projects between upgrades, seeking to exact frames, validating file paths, stopping subprocesses, and making the generated output easy to correct. I could go on and on, but I'll keep my ranting out of the blog.
+The main lesson was that even combining existing tools is difficult. VideOCR already solved the central recognition problem. Most of the work in SubtitleYC came from the less interesting parts: handling failed downloads, keeping the interface responsive during long jobs, preserving projects between upgrades, seeking to exact frames, validating file paths, stopping subprocesses, and making the generated output easy to correct. I could go on and on, but I'll keep my ranting to a minimum in this blog post.
 
-I also ended up with a better appreciation for local software tools and their creators. Keeping the video and OCR workflow on the user's PC avoids uploading large or private media to another service, but local applications have their own security boundary. The loopback API still needs authentication and origin checks, downloaded files still need to be treated as untrusted, and bundled dependencies still need updates.
+I also learnt that although keeping the video and OCR workflow on the user's PC avoids uploading large or private media to another service, local applications have their own security boundary. The loopback API still needs authentication and origin checks, downloaded files would still need to be treated as untrusted, and bundled dependencies would still need updates.
 
-SubtitleYC is still in early access, so generated subtitles should be checked and important projects should be backed up.
+And most importantly, I now have a much better appreciation for local software tools and their creators.
+
+## Final Remarks
+
+SubtitleYC is still in early access, so generated subtitles should still be checked and important projects should be backed up.
 
 It is open source and available under the MIT License (yay!) on [GitHub](https://github.com/BambooYC123/SubtitleYC).
 
 There are still rough edges that need to be addressed, but for now it covers the complete workflow: downloading or uploading a video, extracting its burned-in captions, editing them for accuracy or flair, and exporting them for personal use. A task that previously took multiple hours now takes about five minutes and requires only a few clicks.
 
-**Reducing that workload for myself—and potentially for other people—is exactly why I made the app in the first place.**
+**Reducing that workload for myself and potentially for other people is exactly why I made the app in the first place.**
